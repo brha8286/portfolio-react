@@ -41,7 +41,6 @@ function App() {
         </Toolbar>
       </AppBar>
 
-
       <Router>
         <Switch>
           <Route path="/">

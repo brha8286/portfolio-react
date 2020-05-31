@@ -7,19 +7,22 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import ProjectCard from './ProjectCard';
 import {PROJECTS} from '../projects';
+import bannerImage from "../resources/amarcs/model_positioning_system.png";
+
 
 
 const useStyles = makeStyles((theme) => ({
   
   heroContent: {
     backgroundColor: theme.palette.background.paper,
+    backgroundImage: `url(${bannerImage})`,
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(8),
   },
   card: {
@@ -46,7 +49,7 @@ export default function Homepage() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+              Brandon Harris
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               Something short and leading about the collection below—its contents, the creator, etc.
@@ -71,7 +74,10 @@ export default function Homepage() {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          <Typography variant="h3" align="center" color="textSecondary" paragraph={true} gutterbottom={false}>
+            Projects
+          </Typography>
+          <Grid container spacing={6}>
             {PROJECTS.map((card) => (
               <Grid item key={card.id} xs={12} sm={6} md={4}>
                 <ProjectCard {...card}/>

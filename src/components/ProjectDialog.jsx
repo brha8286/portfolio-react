@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles';
+import Carousel from 'react-material-ui-carousel';
 
 
 const useStyles = makeStyles((theme) =>
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) =>
     })
 );
 
+
 export default function ProjectDialog(props) {
     const history = useHistory();
     const classes = useStyles();
@@ -27,12 +29,21 @@ export default function ProjectDialog(props) {
     }
 
     return (
+
+
         <Dialog aria-labelledby="simple-dialog-title" open={true} onClose={handleClose} fullWidth={true}>
             <DialogTitle id="simple-dialog-title">{props.title}</DialogTitle>
+
             <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
                 <CloseIcon />
             </IconButton>
+            <Carousel autoPlay={false}>
+                {
+                    props.images.map((item,idx) => <img src={item} key={idx} width="100%"/>)
+                }
+            </Carousel>
             Hello world
         </Dialog>
     )
 }
+

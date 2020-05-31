@@ -32,11 +32,13 @@ export default function ProjectCard(props) {
 
     return (
         <Card className={classes.card}>
-            <CardMedia
-                className={classes.cardMedia}
-                image="https://source.unsplash.com/random"
-                title="Image title"
-            />
+            <Link to={"/projects/" + props.id}>
+                <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                />
+            </Link>
             <CardContent className={classes.cardContent}>
                 <h2>{props.title}</h2>
                 <p>{props.short}</p>
@@ -48,7 +50,7 @@ export default function ProjectCard(props) {
             </CardActions>
 
             <Route path={"/projects/" + props.id}>
-                <ProjectDialog {...props}/>
+                <ProjectDialog {...props} />
             </Route>
 
 
