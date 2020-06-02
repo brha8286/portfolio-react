@@ -12,6 +12,8 @@ import {
   Link,
   Route,
 } from 'react-router-dom';
+import ScrollAfter from './ScrollAfter';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -30,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px 0px',
   },
   heroButtons: {
+    position: "sticky",
     marginTop: theme.spacing(4),
+    top: 0,
+  },
+  stuckButton: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    marginTop: -theme.spacing(2),
+    marginLeft: theme.spacing(2),
   },
   cardGrid: {
     paddingTop: theme.spacing(4),
@@ -50,8 +61,9 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionTitle: {
     marginBottom: "30px",
-  }
+  },
 }));
+
 
 export default function Homepage() {
   const classes = useStyles();
@@ -66,26 +78,29 @@ export default function Homepage() {
             <Container maxWidth="sm">
               <Typography component="h1" variant="h2" align="center" gutterBottom>
                 Brandon Harris
-            </Typography>
+                </Typography>
               <Typography variant="h5" align="center" paragraph>
                 Something short and leading about the collection below—its contents, the creator, etc.
                 Make it short and sweet, but not too short so folks don't simply skip over it
                 entirely.
-            </Typography>
-              <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                  <Grid item>
-                      <Button variant="contained" color="primary" href="#projects">
-                        Projects
-                      </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Résumé
-                  </Button>
-                  </Grid>
-                </Grid>
-              </div>
+                </Typography>
+                {/* TODO: add translucent background to div containing buttons */}
+                <ScrollAfter className={classes.stuckButton}>
+                  <div className={classes.heroButtons}>
+                      <Grid container spacing={2} justify="center">
+                        <Grid item>
+                          <Button variant="contained" color="primary" href="#projects">
+                            Projects
+                          </Button>
+                        </Grid>
+                        <Grid item>
+                          <Button variant="outlined" color="primary">
+                            Résumé
+                          </Button>
+                        </Grid>
+                      </Grid>
+                  </div>
+                </ScrollAfter>
             </Container>
           </div>
         </div>

@@ -31,7 +31,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-
       <AppBar position="relative">
         <Toolbar>
           <CameraIcon className={classes.icon} />
