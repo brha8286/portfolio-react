@@ -2,6 +2,10 @@ $max-width: 1280px;
 $brandon-red: rgb(175, 0, 0);
 $brandon-gray: rgb(150, 150, 150);
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

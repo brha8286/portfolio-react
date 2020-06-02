@@ -8,6 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import ProjectCard from './ProjectCard';
 import { PROJECTS } from '../projects';
 import bannerImage from "../resources/banner.jpg";
+import {
+  Link,
+  Route,
+} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -19,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundAttachment: 'fixed',
     padding: theme.spacing(8, 0, 6),
     minHeight: '100vh',
+    color: theme.palette.primary.light,
   },
   heroOverlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(50, 50, 50, 0.7)',
     padding: '20px 0px',
   },
   heroButtons: {
@@ -30,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(8),
+    minHeight: "100vh",
   },
   card: {
     height: '100%',
@@ -58,24 +64,24 @@ export default function Homepage() {
         <div className={classes.heroContent}>
           <div className={classes.heroOverlay}>
             <Container maxWidth="sm">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              <Typography component="h1" variant="h2" align="center" gutterBottom>
                 Brandon Harris
             </Typography>
-              <Typography variant="h5" align="center" color="textPrimary" paragraph>
+              <Typography variant="h5" align="center" paragraph>
                 Something short and leading about the collection below—its contents, the creator, etc.
-                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
+                Make it short and sweet, but not too short so folks don't simply skip over it
                 entirely.
             </Typography>
               <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary">
-                      Main call to action
-                  </Button>
+                      <Button variant="contained" color="primary" href="#projects">
+                        Projects
+                      </Button>
                   </Grid>
                   <Grid item>
                     <Button variant="outlined" color="primary">
-                      Secondary action
+                      Résumé
                   </Button>
                   </Grid>
                 </Grid>
@@ -83,7 +89,7 @@ export default function Homepage() {
             </Container>
           </div>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxWidth="md" id="projects">
           {/* End hero unit */}
           <Typography variant="h3" align="center" color="textPrimary" className={classes.sectionTitle}>
             Projects
