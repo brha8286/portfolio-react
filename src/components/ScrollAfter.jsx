@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ScrollAfter({ children, className }) {
+export default function ScrollAfter({ children, className , afterClassName}) {
   const containerRef = React.useRef(null);
   const [scrolledPast, setScrolledPast] = React.useState(false);
 
@@ -19,11 +19,15 @@ export default function ScrollAfter({ children, className }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [containerRef]);
-  
+
   return (
     <>
-      <div ref={containerRef} /> {/* Tracking pixel */}
-      <div className={scrolledPast ? className : ""}>
+      <div ref={containerRef} style={{visibility: 'hidden'}}> {/* Tracking pixel */}
+          {
+              scrolledPast ? React.cloneElement(children) : null
+          }
+      </div>
+      <div className={`${className} ${scrolledPast ? afterClassName : ""}`}>
         {children}
       </div>
     </>

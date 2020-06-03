@@ -13,6 +13,7 @@ import {
   Route,
 } from 'react-router-dom';
 import ScrollAfter from './ScrollAfter';
+import { lightBlue } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,12 +37,25 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
     top: 0,
   },
+  notStuckButton: {
+    marginTop: 0,
+    marginLeft: 0,
+    transition: `margin-left 1s`,
+  },
   stuckButton: {
     position: "fixed",
     top: 0,
     left: 0,
-    marginTop: -theme.spacing(2),
-    marginLeft: theme.spacing(2),
+    // marginTop: -theme.spacing(2),
+    // marginLeft: theme.spacing(2),
+    marginLeft: 100,
+    marginTop: 100,
+  },
+  stickyContainer: {
+    backgroundColor: 'rgba(50, 50, 50, 0.7)',
+    minWidth: '100vw',
+    backgroundPosition: 'center',
+    // padding: '20px 0px',
   },
   cardGrid: {
     paddingTop: theme.spacing(4),
@@ -84,24 +98,25 @@ export default function Homepage() {
                 Make it short and sweet, but not too short so folks don't simply skip over it
                 entirely.
                 </Typography>
-                {/* TODO: add translucent background to div containing buttons */}
-                <ScrollAfter className={classes.stuckButton}>
-                  <div className={classes.heroButtons}>
-                      <Grid container spacing={2} justify="center">
-                        <Grid item>
-                          <Button variant="contained" color="primary" href="#projects">
-                            Projects
-                          </Button>
-                        </Grid>
-                        <Grid item>
-                          <Button variant="outlined" color="primary">
-                            Résumé
-                          </Button>
-                        </Grid>
-                      </Grid>
-                  </div>
-                </ScrollAfter>
+              {/* TODO: add translucent background to div containing buttons */}
+              
             </Container>
+            <ScrollAfter className={classes.notStuckButton} afterClassName={classes.stuckButton}>
+                  <div className={classes.heroButtons}>
+                    <Grid container spacing={2} justify="center">
+                      <Grid item>
+                        <Button variant="contained" color="primary" href="#projects">
+                          Projects
+                          </Button>
+                      </Grid>
+                      <Grid item>
+                        <Button variant="outlined" color="primary">
+                          Résumé
+                          </Button>
+                      </Grid>
+                    </Grid>
+                  </div>
+              </ScrollAfter>
           </div>
         </div>
         <Container className={classes.cardGrid} maxWidth="md" id="projects">
