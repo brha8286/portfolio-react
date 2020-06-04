@@ -32,30 +32,45 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     padding: '20px 0px',
   },
-  heroButtons: {
-    position: "sticky",
-    marginTop: theme.spacing(4),
-    top: 0,
-  },
   notStuckButton: {
-    marginTop: 0,
-    marginLeft: 0,
-    transition: `margin-left 1s`,
+    position: 'relative',
+    marginTop: 10,
+    left: '50%',
+    transform: 'translate(-50%, 0%)',
+    // left: '50%',
+    // paddingRight: 0,
+    //display: 'inline-block',
+    // transform: 'translateX(50%)',
+    //transition: `transform 1s`,
+    // justifyContent: 'center',
+    // marginTop: theme.spacing(4),
+    // marginLeft: 0,
+    // transition: `justifyContent 1s`,
   },
   stuckButton: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    // marginTop: -theme.spacing(2),
+    left: '0%',
+    transform: 'translate(0%, 0%)',
+    // left: '0%',
+    // paddingRight: 100,
+    //transform: 'translateX(25%)',
+    // justifyContent: 'left',
+    // position: "fixed",
+    // top: 0,
+    // left: 0,
+    // marginTop: theme.spacing(2),
     // marginLeft: theme.spacing(2),
-    marginLeft: 100,
-    marginTop: 100,
+    // marginLeft: 100,
+    // marginTop: 100,
   },
   stickyContainer: {
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     minWidth: '100vw',
     backgroundPosition: 'center',
-    // padding: '20px 0px',
+  },
+  buttonStyle: {
+    // display: 'inline-block',
+    // transform:'translateX(-100%)',
+    // margin: 5,
   },
   cardGrid: {
     paddingTop: theme.spacing(4),
@@ -98,25 +113,22 @@ export default function Homepage() {
                 Make it short and sweet, but not too short so folks don't simply skip over it
                 entirely.
                 </Typography>
-              {/* TODO: add translucent background to div containing buttons */}
-              
-            </Container>
-            <ScrollAfter className={classes.notStuckButton} afterClassName={classes.stuckButton}>
-                  <div className={classes.heroButtons}>
-                    <Grid container spacing={2} justify="center">
-                      <Grid item>
-                        <Button variant="contained" color="primary" href="#projects">
-                          Projects
-                          </Button>
-                      </Grid>
-                      <Grid item>
-                        <Button variant="outlined" color="primary">
-                          Résumé
-                          </Button>
-                      </Grid>
-                    </Grid>
-                  </div>
+              <ScrollAfter className={classes.notStuckButton} afterClassName={classes.stuckButton}>
+                {/* <div className={classes.heroButtons}> */}
+                {/* <Grid container spacing={2} justify="center"> */}
+
+                <Button variant="contained" color="primary" href="#projects" className={classes.buttonStyle}>
+                  Projects
+                </Button>
+
+                <Button variant="outlined" color="primary" className={classes.buttonStyle}>
+                  Résumé
+                  </Button>
+                {/* </Grid> */}
+                {/* </div> */}
               </ScrollAfter>
+            </Container>
+
           </div>
         </div>
         <Container className={classes.cardGrid} maxWidth="md" id="projects">

@@ -23,9 +23,9 @@ export default function ScrollAfter({ children, className , afterClassName}) {
   return (
     <>
       <div ref={containerRef} style={{visibility: 'hidden'}}> {/* Tracking pixel */}
-          {
+          {/* {
               scrolledPast ? React.cloneElement(children) : null
-          }
+          } */}
       </div>
       <div className={`${className} ${scrolledPast ? afterClassName : ""}`}>
         {children}

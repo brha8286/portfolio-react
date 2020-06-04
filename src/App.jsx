@@ -31,7 +31,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="relative">
+      {/* <AppBar position="relative">
         <Toolbar>
           <CameraIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
@@ -39,7 +39,7 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-
+ */}
       <Router>
         <Switch>
           <Route path="/">
