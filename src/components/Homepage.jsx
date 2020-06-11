@@ -13,11 +13,9 @@ import {
   Route,
 } from 'react-router-dom';
 import ScrollAfter from './ScrollAfter';
-import { lightBlue } from '@material-ui/core/colors';
-
+import styles from './homepage.module.scss';
 
 const useStyles = makeStyles((theme) => ({
-
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     backgroundImage: `url(${bannerImage})`,
@@ -32,36 +30,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     padding: '20px 0px',
   },
-  notStuckButton: {
-    position: 'relative',
-    marginTop: 10,
-    left: '50%',
-    transform: 'translate(-50%, 0%)',
-    // left: '50%',
-    // paddingRight: 0,
-    //display: 'inline-block',
-    // transform: 'translateX(50%)',
-    //transition: `transform 1s`,
-    // justifyContent: 'center',
-    // marginTop: theme.spacing(4),
-    // marginLeft: 0,
-    // transition: `justifyContent 1s`,
-  },
-  stuckButton: {
-    left: '0%',
-    transform: 'translate(0%, 0%)',
-    // left: '0%',
-    // paddingRight: 100,
-    //transform: 'translateX(25%)',
-    // justifyContent: 'left',
-    // position: "fixed",
-    // top: 0,
-    // left: 0,
-    // marginTop: theme.spacing(2),
-    // marginLeft: theme.spacing(2),
-    // marginLeft: 100,
-    // marginTop: 100,
-  },
+  // notStuckButton: {
+  //   position: 'relative',
+  //   marginTop: 10,
+  //   left: '50%',
+  //   transform: 'translate(-50%, 0%)',
+  //   // left: '50%',
+  //   // paddingRight: 0,
+  //   //display: 'inline-block',
+  //   // transform: 'translateX(50%)',
+  //   // transition: `transform 1s`,
+  //   transition: `left 1s`,
+  //   // justifyContent: 'center',
+  //   // marginTop: theme.spacing(4),
+  //   // marginLeft: 0,
+  //   // transition: `justifyContent 1s`,
+  // },
   stickyContainer: {
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     minWidth: '100vw',
@@ -113,7 +97,8 @@ export default function Homepage() {
                 Make it short and sweet, but not too short so folks don't simply skip over it
                 entirely.
                 </Typography>
-              <ScrollAfter className={classes.notStuckButton} afterClassName={classes.stuckButton}>
+            </Container>
+            <ScrollAfter className={styles.notStuckButton} afterClassName={styles.slider}>
                 {/* <div className={classes.heroButtons}> */}
                 {/* <Grid container spacing={2} justify="center"> */}
 
@@ -123,12 +108,10 @@ export default function Homepage() {
 
                 <Button variant="outlined" color="primary" className={classes.buttonStyle}>
                   Résumé
-                  </Button>
+                </Button>
                 {/* </Grid> */}
                 {/* </div> */}
               </ScrollAfter>
-            </Container>
-
           </div>
         </div>
         <Container className={classes.cardGrid} maxWidth="md" id="projects">

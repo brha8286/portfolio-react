@@ -1,0 +1,23 @@
+
+.slider {
+    animation: slide-left .3s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: fit-content;
+}
+
+.notStuckButton {
+    
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes slide-left {
+    0% {
+        min-width: 100%;
+    }
+    100% {
+        min-width: 0;
+    }
+}
