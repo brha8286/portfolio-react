@@ -30,31 +30,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     padding: '20px 0px',
   },
-  // notStuckButton: {
-  //   position: 'relative',
-  //   marginTop: 10,
-  //   left: '50%',
-  //   transform: 'translate(-50%, 0%)',
-  //   // left: '50%',
-  //   // paddingRight: 0,
-  //   //display: 'inline-block',
-  //   // transform: 'translateX(50%)',
-  //   // transition: `transform 1s`,
-  //   transition: `left 1s`,
-  //   // justifyContent: 'center',
-  //   // marginTop: theme.spacing(4),
-  //   // marginLeft: 0,
-  //   // transition: `justifyContent 1s`,
-  // },
+  heroButtons: {
+    padding: '10px',
+  },
   stickyContainer: {
     backgroundColor: 'rgba(50, 50, 50, 0.7)',
     minWidth: '100vw',
     backgroundPosition: 'center',
-  },
-  buttonStyle: {
-    // display: 'inline-block',
-    // transform:'translateX(-100%)',
-    // margin: 5,
   },
   cardGrid: {
     paddingTop: theme.spacing(4),
@@ -99,18 +81,18 @@ export default function Homepage() {
                 </Typography>
             </Container>
             <ScrollAfter className={styles.notStuckButton} afterClassName={styles.slider}>
-                {/* <div className={classes.heroButtons}> */}
+                <div className={classes.heroButtons}>
                 {/* <Grid container spacing={2} justify="center"> */}
 
-                <Button variant="contained" color="primary" href="#projects" className={classes.buttonStyle}>
+                <Button variant="contained" color="primary" href="#projects" className={styles.buttonStyle}>
                   Projects
                 </Button>
 
-                <Button variant="outlined" color="primary" className={classes.buttonStyle}>
+                <Button variant="outlined" color="primary" className={styles.darkenStyle}>
                   Résumé
                 </Button>
                 {/* </Grid> */}
-                {/* </div> */}
+                </div>
               </ScrollAfter>
           </div>
         </div>

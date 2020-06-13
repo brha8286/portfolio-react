@@ -1,14 +1,26 @@
 
+
+
 .slider {
     animation: slide-left .3s ease-in-out;
     position: fixed;
     top: 0;
     width: fit-content;
+    margin-top: 0px;
+    
+}
+
+.notStuckButton .buttonStyle {
+    margin: 0px 5px;
+}
+
+.slider .darkenStyle {
+    background-color: rgba(50, 50, 50, 0.5);
+    transition: background-color;
+    transition-duration: 1s;
 }
 
 .notStuckButton {
-    
-    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
