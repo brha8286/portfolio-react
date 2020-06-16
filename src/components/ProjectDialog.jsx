@@ -4,10 +4,13 @@ import Dialog from '@material-ui/core/Dialog';
 import { useHistory } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles } from '@material-ui/core/styles';
-import Carousel from 'react-material-ui-carousel';
-
-
+import { makeStyles, StylesProvider } from '@material-ui/core/styles';
+import 'react-image-gallery/styles/css/image-gallery.css';
+import ImageGallery from 'react-image-gallery';
+import carouselStyles from './projectDialog.module.scss';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+console.log(carouselStyles);
 const useStyles = makeStyles((theme) =>
     ({
         closeButton: {
@@ -19,29 +22,47 @@ const useStyles = makeStyles((theme) =>
     })
 );
 
-
 export default function ProjectDialog(props) {
     const history = useHistory();
     const classes = useStyles();
     const handleClose = () => {
         history.push("/projects/");
-        debugger;
     }
+    const carouselItems = props.images.map((image) => (
+        {original: image, originalClass: carouselStyles.carouselImage}
+    ))
 
     return (
-
-
         <Dialog aria-labelledby="simple-dialog-title" open={true} onClose={handleClose} fullWidth={true}>
             <DialogTitle id="simple-dialog-title">{props.title}</DialogTitle>
 
             <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
                 <CloseIcon />
             </IconButton>
-            <Carousel autoPlay={false}>
-                {
-                    props.images.map((item,idx) => <img src={item} key={idx} width="100%"/>)
-                }
-            </Carousel>
+            <div className={carouselStyles.carouselContainer}>
+                <ImageGallery 
+                    items={carouselItems} 
+                    showThumbnails={false} 
+                    showPlayButton={false} 
+                    showFullscreenButton={false} 
+                    renderRightNav={(onClick, disabled) => (
+                        <IconButton
+                            className={carouselStyles.carouselRight}
+                            disabled={disabled}
+                            onClick={onClick}>
+                                <ArrowRightIcon/>
+                        </IconButton>
+                    )}
+                    renderLeftNav={(onClick, disabled) => (
+                        <IconButton
+                            className={carouselStyles.carouselLeft}
+                            disabled={disabled}
+                            onClick={onClick}>
+                                <ArrowLeftIcon/>
+                        </IconButton>
+                    )}
+                />
+            </div>
             Hello world
         </Dialog>
     )
