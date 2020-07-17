@@ -8,10 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import ProjectCard from './ProjectCard';
 import { PROJECTS } from '../projects';
 import bannerImage from "../resources/banner.jpg";
-import {
-  Link,
-  Route,
-} from 'react-router-dom';
 import ScrollAfter from './ScrollAfter';
 import styles from './homepage.module.scss';
 import 'react-image-gallery/styles/css/image-gallery.css';
