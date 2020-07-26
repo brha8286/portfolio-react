@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ScrollAfter({ children, className , afterClassName}) {
+export function ScrollAfter({ children, className , afterClassName}) {
   const containerRef = React.useRef(null);
   const childrenWrapper = React.useRef(null);
   const [scrolledPast, setScrolledPast] = React.useState(false);

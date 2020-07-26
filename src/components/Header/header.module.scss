@@ -1,0 +1,11 @@
+@import "styles/settings";
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  height: 48px;
+  background-color: $brandon-gray;
+  color: $white;
+}

@@ -1,42 +1,13 @@
 import React from 'react';
-import Homepage from './components/Homepage';
-import './styles/normalize.css';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from './theme';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-// import Copyright from './Copyright';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
+import { Homepage } from 'components/Homepage';
+import {Header} from "./components/Header";
 
-
-function App() {
-  const classes = useStyles();
-
+export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      {/* <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
- */}
+    <div>
+      <Header />
       <Router>
         <Switch>
           <Route path="/">
@@ -48,19 +19,9 @@ function App() {
         </Switch>
       </Router>
 
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        {/* <Copyright /> */}
+      <footer>
+        {'Copyright © '} Brandon Harris {new Date().getFullYear()}{'.'}
       </footer>
-      {/* End footer */}
-    </ThemeProvider>
+    </div>
   );
 }
-
-export default App;
