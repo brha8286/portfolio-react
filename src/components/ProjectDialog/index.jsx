@@ -1,59 +1,55 @@
 import React from 'react';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import { useHistory } from 'react-router-dom';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-
+import {Modal} from 'react-bootstrap'
 import ImageGallery from 'react-image-gallery';
-import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 import classes from './projectDialog.module.scss';
+import {useQuery} from "../../hooks/useQuery";
+import {LinkButton} from "../LinkButton";
+import {useHistory} from "react-router-dom";
 
-export function ProjectDialog(props) {
-    const history = useHistory();
+export function ProjectDialog({ project }) {
+  const query = useQuery(); // Parse the URL query params
+  const history = useHistory(); // Get access to the react router history object
 
-    const handleClose = () => {
-        history.push("/projects/");
-    }
+  const handleClose = () => {
+    query.delete("project"); // remove ?project=<id> from the param list
+    const location = { ...history.location, search: query.toString() } // make a clone of the location object with the new query string
 
-    const carouselItems = props.images.map((image) => (
-        {original: image, originalClass: classes.carouselImage}
-    ))
+    history.push(location); // Add the new URL to the history stack
+  }
 
-    return (
-        <Dialog aria-labelledby="simple-dialog-title" open={true} onClose={handleClose} fullWidth={true}>
-            <DialogTitle id="simple-dialog-title">{props.title}</DialogTitle>
+  const { title, images, id } = project || {}; // project could be undefined so give empty object as a fallback
 
-            <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
-                <CloseIcon />
-            </IconButton>
+  // Only show the modal if we have a valid project. We want to use the 'show' property so we can animate the Model opening/closing
+  return (
+    <Modal show={!!project} onHide={handleClose} size="lg" aria-labelledby="modal-title">
+      {/* Only try and render the Modal body if we have a valid project */}
+      {project && (
+        <>
+          <Modal.Header closeButton>
+            <Modal.Title id="modal-title">{title}</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
             <div className={classes.carouselContainer}>
-                <ImageGallery
-                    items={carouselItems}
-                    showThumbnails={false}
-                    showPlayButton={false}
-                    showFullscreenButton={false}
-                    renderRightNav={(onClick, disabled) => (
-                        <IconButton
-                            className={classes.carouselRight}
-                            disabled={disabled}
-                            onClick={onClick}>
-                                <ArrowRightIcon/>
-                        </IconButton>
-                    )}
-                    renderLeftNav={(onClick, disabled) => (
-                        <IconButton
-                            className={classes.carouselLeft}
-                            disabled={disabled}
-                            onClick={onClick}>
-                                <ArrowLeftIcon/>
-                        </IconButton>
-                    )}
-                />
+              <ImageGallery
+                items={images.map((image) => (
+                  {original: image, originalClass: classes.carouselImage}
+                ))}
+                showThumbnails={false}
+                showPlayButton={false}
+                showFullscreenButton={false}
+              />
             </div>
-            Hello world
-        </Dialog>
-    )
+          </Modal.Body>
+
+          <Modal.Footer>
+            <LinkButton to={`/project/${id}`} variant="primary">
+              See More
+            </LinkButton>
+          </Modal.Footer>
+        </>
+      )}
+    </Modal>
+  )
 }

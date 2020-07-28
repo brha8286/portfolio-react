@@ -1,4 +1,7 @@
-@import "bootstrap";
+@import "settings"; // import settings first so it can override the bootstrap defaults
+
+// Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap";
 
 html {
   scroll-behavior: smooth;

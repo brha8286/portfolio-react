@@ -1,6 +1,6 @@
 @import "styles/settings";
 
-.heroContent {
+.heroImage {
   background-color: $body-color;
   background-position: center;
   background-size: cover;
@@ -11,69 +11,49 @@
 };
 
 .heroOverlay {
-  background-color: rgba(50, 50, 50, 0.7);
-  padding: 20px 0px;
-};
+  @extend %overlay;
+  top: 200px;
+  padding: 8px 0 0 0;
+  text-align: center;
 
-.stickyContainer {
-  background-color: rgba(50, 50, 50, 0.7);
-  min-width: 100vw;
-  background-position: center;
-};
-
-.cardGrid {
-  padding-top: 4px;
-  padding-bottom: 8px;
-  min-height: 100vh;
-};
-
-.card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-};
-
-.cardMedia {
-  padding-top: 56.25%; // 16:9
-};
-
-.cardContent {
-  flex-grow: 1;
-};
-
-.sectionTitle {
-  margin-bottom: 30px;
-};
-
-.stuckButton {
-  animation: slide-left .3s ease-in-out;
-  position: fixed;
-  top: 0;
-  width: fit-content;
-  margin-top: 0px;
-  z-index: 10; // Ensure the buttons are on top of the header
-}
-
-.notStuckButton .buttonStyle {
-  margin: 0px 5px;
-}
-
-.stuckButton .darkenStyle {
-  background-color: rgba(50, 50, 50, 0.5);
-  transition: background-color;
-  transition-duration: 1s;
-}
-
-.notStuckButton {
-  display: flex;
-  justify-content: center;
-}
-
-@keyframes slide-left {
-  0% {
-    min-width: 100%;
+  .brandonIntro {
+    width: 600px;
+    max-width: 100%;
   }
-  100% {
-    min-width: 0;
+
+  .header {
+    &:not(.fixed) {
+      background-color: transparent; // remove the background color while not fixed
+      position: relative;
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+
+      nav {
+        width: 100%; // Max width means the inner contents have room to be right aligned
+      }
+    }
+
+    nav {
+      // HACKY: using the EXACT width so the animation is smooth
+      width: 182px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      transition: width .3s ease-in-out;
+    }
+  };
+}
+
+.projectSection {
+  padding: 40px 0 25px;
+
+  .projectImg {
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }

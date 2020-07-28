@@ -1,11 +1,18 @@
 @import "styles/settings";
 
 .header {
-  position: -webkit-sticky;
+  @extend %overlay;
+
+  text-align: end;
   position: sticky;
-  z-index: 5;
   top: 0;
-  height: 48px;
-  background-color: $brandon-gray;
-  color: $white;
-}
+
+  .pageNavigation {
+    padding: 10px 0; // Add padding to the top and bottom
+
+    > :not(:last-child) {
+      // Add spacing between the buttons
+      margin-right: 10px;
+    }
+  }
+};
