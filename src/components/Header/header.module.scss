@@ -1,0 +1,18 @@
+@import "styles/settings";
+
+.header {
+  @extend %overlay;
+
+  text-align: end;
+  position: sticky;
+  top: 0;
+
+  .pageNavigation {
+    padding: 10px 0; // Add padding to the top and bottom
+
+    > :not(:last-child) {
+      // Add spacing between the buttons
+      margin-right: 10px;
+    }
+  }
+};

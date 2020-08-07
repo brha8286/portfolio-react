@@ -1,66 +1,36 @@
 import React from 'react';
-import Homepage from './components/Homepage';
-import './styles/normalize.css';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from './theme';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-// import Copyright from './Copyright';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
+import { Homepage } from 'components/Homepage';
+import {Footer} from "./components/Footer";
+import {Bio} from "./components/Bio";
+import {Project} from "./components/Project";
 
-
-function App() {
-  const classes = useStyles();
-
+// The 'style' properties added in this file are to keep the footer at the bottom of the page, even when the page
+// content is not enough to fill a page. See https://css-tricks.com/couple-takes-sticky-footer/#there-is-flexbox
+export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      {/* <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
- */}
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Homepage />
-          </Route>
-          <Route path="*">
-            This is not the URL you are looking for.
-          </Route>
-        </Switch>
-      </Router>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <div style={{ flex: '1 0 auto' }}>
+        <Router>
+          <Switch>
+            <Route path="/" exact={true}>
+              <Homepage />
+            </Route>
+            <Route path="/bio" exact={true}>
+              <Bio />
+            </Route>
+            <Route path="/project/:id" exact={true}>
+              <Project />
+            </Route>
+            <Route path="*">
+              This is not the URL you are looking for.
+            </Route>
+          </Switch>
+        </Router>
+      </div>
 
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        {/* <Copyright /> */}
-      </footer>
-      {/* End footer */}
-    </ThemeProvider>
+      <Footer style={{ flexShrink: 0 }} />
+    </div>
   );
 }
-
-export default App;

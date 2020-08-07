@@ -1,0 +1,27 @@
+@import "settings"; // import settings first so it can override the bootstrap defaults
+
+// Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%
+}
+
+.container {
+  max-width: $max-width;
+  margin: auto;
+  position: relative;
+}
