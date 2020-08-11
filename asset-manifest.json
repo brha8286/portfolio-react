@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/portfolio-react/static/css/main.68bee0f2.chunk.css",
+    "main.js": "/portfolio-react/static/js/main.b8613f29.chunk.js",
+    "main.js.map": "/portfolio-react/static/js/main.b8613f29.chunk.js.map",
+    "runtime-main.js": "/portfolio-react/static/js/runtime-main.a4de92d3.js",
+    "runtime-main.js.map": "/portfolio-react/static/js/runtime-main.a4de92d3.js.map",
+    "static/css/2.40a775a0.chunk.css": "/portfolio-react/static/css/2.40a775a0.chunk.css",
+    "static/js/2.27bf1488.chunk.js": "/portfolio-react/static/js/2.27bf1488.chunk.js",
+    "static/js/2.27bf1488.chunk.js.map": "/portfolio-react/static/js/2.27bf1488.chunk.js.map",
+    "index.html": "/portfolio-react/index.html",
+    "precache-manifest.20bf2aab453d1d166872778a343107b6.js": "/portfolio-react/precache-manifest.20bf2aab453d1d166872778a343107b6.js",
+    "service-worker.js": "/portfolio-react/service-worker.js",
+    "static/css/2.40a775a0.chunk.css.map": "/portfolio-react/static/css/2.40a775a0.chunk.css.map",
+    "static/css/main.68bee0f2.chunk.css.map": "/portfolio-react/static/css/main.68bee0f2.chunk.css.map",
+    "static/js/2.27bf1488.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.27bf1488.chunk.js.LICENSE.txt",
+    "static/media/assembled.jpg": "/portfolio-react/static/media/assembled.cc307757.jpg",
+    "static/media/banner.jpg": "/portfolio-react/static/media/banner.c76ae3d8.jpg",
+    "static/media/buckling_annotated.png": "/portfolio-react/static/media/buckling_annotated.925ad7ab.png",
+    "static/media/buckling_rig.png": "/portfolio-react/static/media/buckling_rig.7f294834.png",
+    "static/media/components.png": "/portfolio-react/static/media/components.86b948d0.png",
+    "static/media/coupling.PNG": "/portfolio-react/static/media/coupling.3f56155d.PNG",
+    "static/media/hotfire.jpg": "/portfolio-react/static/media/hotfire.5a772ed8.jpg",
+    "static/media/nozzle.png": "/portfolio-react/static/media/nozzle.c8c0bb1a.png",
+    "static/media/pitch.png": "/portfolio-react/static/media/pitch.2e9ba33c.png",
+    "static/media/roll.png": "/portfolio-react/static/media/roll.4b55521f.png",
+    "static/media/system.png": "/portfolio-react/static/media/system.8bd7ffe8.png",
+    "static/media/yaw.png": "/portfolio-react/static/media/yaw.bd0e5e26.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4de92d3.js",
+    "static/css/2.40a775a0.chunk.css",
+    "static/js/2.27bf1488.chunk.js",
+    "static/css/main.68bee0f2.chunk.css",
+    "static/js/main.b8613f29.chunk.js"
+  ]
+}
