@@ -1,9 +1,10 @@
 import React from 'react';
-import {Header} from "../Header";
-import {Container} from "react-bootstrap";
-import {useParams, Redirect} from "react-router-dom";
-import {PROJECTS} from "../../resources/projects";
-import ImageGallery from "react-image-gallery";
+import { Header } from "../Header";
+import { Container } from "react-bootstrap";
+import { useParams, Redirect } from "react-router-dom";
+import { PROJECTS } from "../../resources/projects";
+import { ProjectCarousel } from '../ProjectCarousel';
+
 
 export const Project = () => {
   const { id } = useParams(); // access the dynamic pieces of the URL. See https://reactrouter.com/web/example/url-params
@@ -24,15 +25,9 @@ export const Project = () => {
       <main>
         <Container>
           <h1>{title}</h1>
-
-          <ImageGallery
-            items={carouselItems}
-            showThumbnails={false}
-            showPlayButton={false}
-            showFullscreenButton={false}
-          />
-
+          <ProjectCarousel project={project} />
           <p>{long}</p>
+
         </Container>
       </main>
     </>

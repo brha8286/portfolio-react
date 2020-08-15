@@ -1,18 +1,18 @@
-import assembled from "./resources/amarcs/assembled.jpg";
-import components from "./resources/amarcs/components.png";
-import hotfire from "./resources/amarcs/hotfire.jpg"
+import assembled from "./amarcs/assembled.jpg";
+import components from "./amarcs/components.png";
+import hotfire from "./amarcs/hotfire.jpg"
 
-import pitch from "./resources/compass/pitch.png"
-import roll from "./resources/compass/roll.png"
-import system from "./resources/compass/system.png"
-import yaw from "./resources/compass/yaw.png"
+import pitch from "./compass/pitch.png"
+import roll from "./compass/roll.png"
+import system from "./compass/system.png"
+import yaw from "./compass/yaw.png"
 
-import buckling from "./resources/buckling/buckling_rig.png"
-import buckling_annotated from "./resources/buckling/buckling_annotated.png"
+import buckling from "./buckling/buckling_rig.png"
+import buckling_annotated from "./buckling/buckling_annotated.png"
 
-import pressureSystem from "./resources/supersonic/system.png"
-import coupling from "./resources/supersonic/coupling.PNG"
-import nozzle from "./resources/supersonic/nozzle.png"
+import pressureSystem from "./supersonic/system.png"
+import coupling from "./supersonic/coupling.PNG"
+import nozzle from "./supersonic/nozzle.png"
 
 export const PROJECTS = [
     {

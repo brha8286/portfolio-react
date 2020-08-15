@@ -1,11 +1,12 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap'
-import ImageGallery from 'react-image-gallery';
 
-import classes from './projectDialog.module.scss';
 import {useQuery} from "../../hooks/useQuery";
 import {LinkButton} from "../LinkButton";
 import {useHistory} from "react-router-dom";
+
+import { ProjectCarousel } from '../ProjectCarousel';
+import classes from './projectDialog.module.scss';
 
 export function ProjectDialog({ project }) {
   const query = useQuery(); // Parse the URL query params
@@ -31,16 +32,7 @@ export function ProjectDialog({ project }) {
           </Modal.Header>
 
           <Modal.Body>
-            <div className={classes.carouselContainer}>
-              <ImageGallery
-                items={images.map((image) => (
-                  {original: image, originalClass: classes.carouselImage}
-                ))}
-                showThumbnails={false}
-                showPlayButton={false}
-                showFullscreenButton={false}
-              />
-            </div>
+            <ProjectCarousel project={project} className={classes.carouselContainer}/>
           </Modal.Body>
 
           <Modal.Footer>
