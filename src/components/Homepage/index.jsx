@@ -33,9 +33,11 @@ export function Homepage() {
           <Container className={classes.brandonIntro}>
             <h1>Brandon Harris</h1>
             <p>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don't simply skip over it
-              entirely.
+              Raised by wolves in the Siberian tundra, Brandon was taught aerospace engineering by an equally
+              out-of-place cocker spaniel.  Little did he know that the housepet was none other than the grandchild-dog
+              of Werner von Braun, father of modern rocketry.  Across continents, oceans, and an array of challenges, 
+              a friendship stronger than permafrost and hotter than KFC mashed potatoes was born; and our dashing hero
+              would learn fluid dynamics along the way.
             </p>
           </Container>
         </section>
@@ -51,7 +53,7 @@ export function Homepage() {
               <Col key={card.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <Link to={`?project=${card.id}`}>
-                    <img className={clsx("card-img-top", classes.projectImg)} src="https://source.unsplash.com/random" />
+                    <img className={clsx("card-img-top", classes.projectImg)} src={card.images[0]} />
                   </Link>
                   <Card.Body>
                     <Card.Title>{card.title}</Card.Title>

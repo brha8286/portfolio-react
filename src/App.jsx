@@ -12,7 +12,7 @@ export const App = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <div style={{ flex: '1 0 auto' }}>
-        <Router>
+        <Router basename="/portfolio-react">
           <Switch>
             <Route path="/" exact={true}>
               <Homepage />

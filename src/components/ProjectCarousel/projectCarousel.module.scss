@@ -1,0 +1,26 @@
+@import "styles/settings";
+
+.carouselContainer {
+  position: relative;
+  max-height: 500px;
+}
+
+.carouselRight {
+  right: 0;
+  top: 40%;
+  z-index: 10;
+  position: absolute !important;
+}
+
+.carouselLeft {
+  left: 0;
+  top: 40%;
+  z-index: 10;
+  position: absolute !important;
+}
+
+.carouselImage {
+  height: 40vh;
+  width: 100%;
+  overflow-x: hidden;
+}
