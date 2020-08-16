@@ -1,59 +1,113 @@
 @import "styles/settings";
 
+$heroOverlayTop: 200px;
+$heroOverlayHeight: 326px;
+
 .heroImage {
   background-color: $body-color;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   padding: 8px 0 6px;
-  min-height: 100vh;
+  min-height: $heroOverlayHeight + $heroOverlayTop + $heroOverlayHeight/2;
+  height: 100vh;
+  max-height: 900px;
   color: $dark;
-};
+}
+
+;
 
 .heroOverlay {
   @extend %overlay;
-  top: 200px;
+
+  top: $heroOverlayTop;
+  height: $heroOverlayHeight;
   padding: 8px 0 0 0;
   text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+  }
 
   .brandonIntro {
     width: 600px;
     max-width: 100%;
   }
 
+
   .header {
     &:not(.fixed) {
       background-color: transparent; // remove the background color while not fixed
       position: relative;
+
+      .headerBrand {
+        opacity: 0; // Hide the brand
+      }
     }
 
     &.fixed {
       position: fixed;
       top: 0;
 
-      nav {
+      .headerBrand {
+        transition-delay: .2s; // take longer to show up
+      }
+
+      .headerNav {
         width: 100%; // Max width means the inner contents have room to be right aligned
       }
     }
 
-    nav {
+    .headerBrand {
+      opacity: 1; // Show the brand
+      position: absolute;
+      transition: opacity .3s ease-in-out;
+    }
+
+    .headerNav {
+      margin: auto; // horizontally center
+      flex-grow: unset;
       // HACKY: using the EXACT width so the animation is smooth
       width: 182px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
       transition: width .3s ease-in-out;
     }
-  };
+  }
+;
 }
 
-.projectSection {
-  padding: 40px 0 25px;
+.section {
+  margin-top: 50px;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $section-margin;
+    text-align: center;
+  }
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+
+  @include screen-md {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include screen-lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   .projectImg {
+    background-color: white;
     max-height: 200px;
     object-fit: cover;
     transition: transform .2s ease-in-out;
 
     &:hover {
       transform: scale(1.05);
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
     }
   }
 }

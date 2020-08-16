@@ -1,8 +1,13 @@
 @import "styles/settings";
 
+$slide-height: 40vh;
+
 .carouselContainer {
-  position: relative;
+  position: relative; // Must be relative so the previous/next buttons can be positioned absolutely
   max-height: 500px;
+  height: $slide-height;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .carouselRight {
@@ -20,7 +25,7 @@
 }
 
 .carouselImage {
-  height: 40vh;
+  height: $slide-height;
   width: 100%;
   overflow-x: hidden;
 }

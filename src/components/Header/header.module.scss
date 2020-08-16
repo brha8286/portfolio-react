@@ -3,12 +3,30 @@
 .header {
   @extend %overlay;
 
-  text-align: end;
   position: sticky;
   top: 0;
+  padding: 10px 0;
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .brandonBrand {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-shadow: 2px 2px $brandon-red;
+    }
+  }
 
   .pageNavigation {
-    padding: 10px 0; // Add padding to the top and bottom
+    flex-grow: 1;
+    align-self: end;
+    text-align: end;
 
     > :not(:last-child) {
       // Add spacing between the buttons

@@ -3,19 +3,24 @@ import React from "react";
 import classes from './header.module.scss';
 import clsx from "clsx";
 import {LinkButton} from "../LinkButton";
+import {Link} from "react-router-dom";
+import {Container} from "react-bootstrap";
 
-export const Header = ({ className }) => {
+export const Header = ({ className, brandClassName, navClassName }) => {
   return (
     <header className={clsx(classes.header, className)}>
-      <nav className={clsx('container', classes.pageNavigation)}>
-        <LinkButton variant="outline-light" to="/#projects">
-          Projects
-        </LinkButton>
+      <Container className={classes.container}>
+        <Link className={clsx(classes.brandonBrand, brandClassName)} to={"/"}>Brandon Harris</Link>
+        <nav className={clsx(classes.pageNavigation, navClassName)}>
+          <LinkButton variant="outline-light" to="/#projects">
+            Projects
+          </LinkButton>
 
-        <LinkButton variant="outline-light" to="/#resume">
-          Résumé
-        </LinkButton>
-      </nav>
+          <LinkButton variant="outline-light" to="/#resume">
+            Résumé
+          </LinkButton>
+        </nav>
+      </Container>
     </header>
   )
 };

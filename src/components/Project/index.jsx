@@ -5,6 +5,7 @@ import { useParams, Redirect } from "react-router-dom";
 import { PROJECTS } from "../../resources/projects";
 import { ProjectCarousel } from '../ProjectCarousel';
 
+import classes from './project.module.scss';
 
 export const Project = () => {
   const { id } = useParams(); // access the dynamic pieces of the URL. See https://reactrouter.com/web/example/url-params
@@ -12,11 +13,10 @@ export const Project = () => {
 
   if (!project) return <Redirect from='*' to='/404' />;
 
-  const { title, images, long } = project;
+  const { title, long } = project;
 
-  const carouselItems = images.map((image) => (
-    { original: image }
-  ))
+  // The long description could be either a single string or an array of strings. Convert to ensure it is always an array.
+  const descriptionParagraphs = Array.isArray(long) ? long : [long];
 
   return (
     <>
@@ -24,10 +24,14 @@ export const Project = () => {
 
       <main>
         <Container>
-          <h1>{title}</h1>
-          <ProjectCarousel project={project} />
-          <p>{long}</p>
-
+          <div className={classes.section}>
+            <h1>{title}</h1>
+            <ProjectCarousel project={project} className={classes.carousel} />
+            {
+              // Loop over the description and create a paragraph for each block of text
+              descriptionParagraphs.map(str => <p>{str}</p>)
+            }
+          </div>
         </Container>
       </main>
     </>
