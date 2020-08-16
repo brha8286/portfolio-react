@@ -8,7 +8,7 @@ import bannerImage from "resources/banner.jpg";
 
 import classes from './homepage.module.scss';
 import {useScrollWatch} from "../../hooks/useScrollWatch";
-import {Link, Route} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {ProjectDialog} from "../ProjectDialog";
 import {Header} from "../Header";
 import {LinkButton} from "../LinkButton";
@@ -35,43 +35,47 @@ export function Homepage() {
             <p>
               Raised by wolves in the Siberian tundra, Brandon was taught aerospace engineering by an equally
               out-of-place cocker spaniel.  Little did he know that the housepet was none other than the grandchild-dog
-              of Werner von Braun, father of modern rocketry.  Across continents, oceans, and an array of challenges, 
+              of Werner von Braun, father of modern rocketry.  Across continents, oceans, and an array of challenges,
               a friendship stronger than permafrost and hotter than KFC mashed potatoes was born; and our dashing hero
               would learn fluid dynamics along the way.
             </p>
           </Container>
         </section>
 
-        <Header className={clsx(classes.header, hasScrolledPastIntro && classes.fixed)}/>
+        <Header
+          className={clsx(classes.header, hasScrolledPastIntro && classes.fixed)}
+          brandClassName={classes.headerBrand}
+          navClassName={classes.headerNav}
+        />
       </div>
 
-      <section>
-        <Container id="projects" className={classes.projectSection}>
+      <section className={classes.section}>
+        <Container id="projects">
           <h2>Projects</h2>
-          <Row>
+          <div className={classes.projectGrid}>
             {PROJECTS.map((card) => (
-              <Col key={card.id} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <Link to={`?project=${card.id}`}>
-                    <img className={clsx("card-img-top", classes.projectImg)} src={card.images[0]} />
-                  </Link>
-                  <Card.Body>
-                    <Card.Title>{card.title}</Card.Title>
-                    <Card.Text>
-                      {card.short}
-                    </Card.Text>
-                    <LinkButton to={`/project/${card.id}`} variant="primary">
-                      See More
-                    </LinkButton>
-                  </Card.Body>
-                </Card>
-              </Col>
+              <Card key={card.id} className={classes.card}>
+                <Link to={`?project=${card.id}`}>
+                  <img className={clsx("card-img-top", classes.projectImg)} src={card.images[0]} />
+                </Link>
+                <Card.Body>
+                  <Card.Title>{card.title}</Card.Title>
+                  <Card.Text>
+                    {card.short}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <LinkButton to={`/project/${card.id}`} variant="primary">
+                    See More
+                  </LinkButton>
+                </Card.Footer>
+              </Card>
             ))}
-          </Row>
+          </div>
         </Container>
       </section>
 
-      <section>
+      <section className={classes.section}>
         <Container id="resume">
           <h2>Resume</h2>
           <p>PDF resume with option to download will be here</p>
