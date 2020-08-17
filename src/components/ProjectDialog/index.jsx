@@ -19,7 +19,7 @@ export function ProjectDialog({ project }) {
     history.push(location); // Add the new URL to the history stack
   }
 
-  const { title, images, id } = project || {}; // project could be undefined so give empty object as a fallback
+  const { title, id } = project || {}; // project could be undefined so give empty object as a fallback
 
   // Only show the modal if we have a valid project. We want to use the 'show' property so we can animate the Model opening/closing
   return (

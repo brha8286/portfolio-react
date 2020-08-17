@@ -68,7 +68,7 @@ $heroOverlayHeight: 326px;
       margin: auto; // horizontally center
       flex-grow: unset;
       // HACKY: using the EXACT width so the animation is smooth
-      width: 200px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      width: 204px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
       transition: width .3s ease-in-out;
     }
   }
@@ -76,8 +76,6 @@ $heroOverlayHeight: 326px;
 }
 
 .section {
-  margin-top: 50px;
-
   h2 {
     font-size: 2.5rem;
     margin-bottom: $section-margin;
@@ -102,11 +100,12 @@ $heroOverlayHeight: 326px;
     background-color: white;
     max-height: 200px;
     object-fit: cover;
-    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out; // animate the image growing on hover
+    border: 1px solid transparent; // Since borders take up space, always apply a border to the image but make invisible to start
 
     &:hover {
-      transform: scale(1.05);
-      border: 1px solid rgba(0, 0, 0, 0.125);
+      transform: scale(1.05); // visually grow the image
+      border-color: rgba(0, 0, 0, 0.125); // show the border
       border-radius: 0.25rem;
     }
   }
