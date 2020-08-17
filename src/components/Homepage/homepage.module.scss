@@ -68,7 +68,7 @@ $heroOverlayHeight: 326px;
       margin: auto; // horizontally center
       flex-grow: unset;
       // HACKY: using the EXACT width so the animation is smooth
-      width: 182px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      width: 200px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
       transition: width .3s ease-in-out;
     }
   }

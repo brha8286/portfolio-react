@@ -6,6 +6,7 @@ import { LinkButton } from "../LinkButton";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import resume from "../../resources/BrandonHarris.pdf";
 
 
 export const Header = ({ className, brandClassName, navClassName }) => {
@@ -18,7 +19,7 @@ export const Header = ({ className, brandClassName, navClassName }) => {
             Projects
           </LinkButton>
 
-          <Button variant="outline-light" href={pdf} target="_blank" className={classes.resumeButton}>
+          <Button variant="outline-light" href={resume} target="_blank" className={classes.resumeButton}>
             Résumé
             <span className="material-icons"> get_app </span>
           </Button>
