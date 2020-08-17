@@ -1,8 +1,8 @@
-import {Container, Row, Col, Card} from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import React from 'react';
 import clsx from 'clsx';
 
-import {PROJECTS} from 'resources/projects';
+import { PROJECTS } from 'resources/projects';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import bannerImage from "resources/banner.jpg";
 
@@ -20,10 +20,10 @@ export function Homepage() {
 
   const projectId = useQuery().get("project"); // ?project=id
   const project = PROJECTS.find(project => project.id === projectId);
-
+  
   return (
     <>
-      <div className={classes.heroImage} style={{backgroundImage: `url(${bannerImage})`}}/>
+      <div className={classes.heroImage} style={{ backgroundImage: `url(${bannerImage})` }} />
 
       {/* If there is a project ID in the URL then show the project modal */}
       <ProjectDialog project={project} />
@@ -72,13 +72,6 @@ export function Homepage() {
               </Card>
             ))}
           </div>
-        </Container>
-      </section>
-
-      <section className={classes.section}>
-        <Container id="resume">
-          <h2>Resume</h2>
-          <p>PDF resume with option to download will be here</p>
         </Container>
       </section>
 

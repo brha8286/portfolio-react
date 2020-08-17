@@ -2,9 +2,11 @@ import React from "react";
 
 import classes from './header.module.scss';
 import clsx from "clsx";
-import {LinkButton} from "../LinkButton";
-import {Link} from "react-router-dom";
-import {Container} from "react-bootstrap";
+import { LinkButton } from "../LinkButton";
+import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
 
 export const Header = ({ className, brandClassName, navClassName }) => {
   return (
@@ -16,9 +18,10 @@ export const Header = ({ className, brandClassName, navClassName }) => {
             Projects
           </LinkButton>
 
-          <LinkButton variant="outline-light" to="/#resume">
+          <Button variant="outline-light" href={pdf} target="_blank" className={classes.resumeButton}>
             Résumé
-          </LinkButton>
+            <span className="material-icons"> get_app </span>
+          </Button>
         </nav>
       </Container>
     </header>
