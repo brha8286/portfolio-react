@@ -1,6 +1,6 @@
-import assembled from "./amarcs/assembled.jpg";
+import assembled from "./amarcs/assembled.png";
 import components from "./amarcs/components.png";
-import hotfire from "./amarcs/hotfire.jpg"
+import hotfire from "./amarcs/hotfire.png"
 
 import pitch from "./compass/pitch.png"
 import roll from "./compass/roll.png"
