@@ -1,18 +1,19 @@
-import {Container, Card} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import React from 'react';
 import clsx from 'clsx';
 
 import {PROJECTS} from 'resources/projects';
-import 'react-image-gallery/styles/css/image-gallery.css';
 import bannerImage from "resources/banner.jpg";
 
 import classes from './homepage.module.scss';
 import {useScrollWatch} from "../../hooks/useScrollWatch";
-import {Link} from "react-router-dom";
 import {ProjectDialog} from "../ProjectDialog";
 import {Header} from "../Header";
 import {LinkButton} from "../LinkButton";
 import {useQuery} from "../../hooks/useQuery";
+import {ProjectCarousel} from "../ProjectCarousel";
+
+const COLORS = ['rgba(100, 175, 233, .3)', 'rgba(200, 200, 62, .3)', 'rgba(200, 200, 190, .3)', 'rgba(180, 70, 60, .3)']
 
 export function Homepage() {
   const introSectionRef = React.useRef(null); // A reference to the element around the buttons so we can watch if we have scrolled past it
@@ -49,32 +50,25 @@ export function Homepage() {
         />
       </div>
 
-      <main>
-        <section className={classes.section}>
-          <Container id="projects">
-            <h2>Projects</h2>
-            <div className={classes.projectGrid}>
-              {PROJECTS.map((card) => (
-                <Card key={card.id} className={classes.card}>
-                  <Link to={`?project=${card.id}`} title={"See more images"}>
-                    <img className={clsx("card-img-top", classes.projectImg)} src={card.images[0]}/>
-                  </Link>
-                  <Card.Body>
-                    <Card.Title>{card.title}</Card.Title>
-                    <Card.Text>
-                      {card.short}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <LinkButton to={`/project/${card.id}`} variant="primary">
-                      See More
-                    </LinkButton>
-                  </Card.Footer>
-                </Card>
-              ))}
-            </div>
-          </Container>
-        </section>
+      <main className={classes.main}>
+        <Container className={classes.section}>
+          <h2 id="projects">Projects</h2>
+          <p>[Short description of the projects section]</p>
+        </Container >
+
+        {PROJECTS.map((project, index) => (
+          <section key={project.id} style={{ backgroundColor: COLORS[index % COLORS.length] }}>
+            <Container className={classes.section}>
+              <ProjectCarousel project={project} showThumb={false} autoPlay={true} />
+              <h3>{project.title}</h3>
+              <p>{project.short}</p>
+
+              <LinkButton to={`/project/${project.id}`} variant="primary" className={classes.seeMoreBtn}>
+                Read More
+              </LinkButton>
+            </Container>
+          </section>
+        ))}
       </main>
     </>
   );

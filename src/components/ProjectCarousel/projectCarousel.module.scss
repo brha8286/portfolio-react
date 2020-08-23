@@ -1,31 +1,63 @@
 @import "styles/settings";
 
 $slide-height: 40vh;
+$control-color: rgb(55, 57, 64);
 
 .carouselContainer {
-  position: relative; // Must be relative so the previous/next buttons can be positioned absolutely
+  display: block;
+  position: relative;
+  padding-bottom: 2rem;
+
+  :global(.slide) {
+    display: flex;
+    align-items: center;
+    background: none !important;
+  }
+}
+
+.controlButton {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  border: 0;
+  background: 0;
+  color: rgba($control-color, .7);
+  padding: 15px;
+  height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: $control-color;
+    background-color: rgba(#cccccc, .1);
+  }
+
+  & > * {
+    font-size: 2.5rem;
+    color: inherit;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}
+
+.image {
+  height: $slide-height;
   max-height: 500px;
-  height: $slide-height;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-}
 
-.carouselRight {
-  right: 0;
-  top: 40%;
-  z-index: 10;
-  position: absolute !important;
-}
+  @include screen-md {
+    width: 70%;
+  }
 
-.carouselLeft {
-  left: 0;
-  top: 40%;
-  z-index: 10;
-  position: absolute !important;
-}
+  @include screen-lg {
+    width: 50%;
+  }
 
-.carouselImage {
-  height: $slide-height;
-  width: 100%;
-  overflow-x: hidden;
+  img {
+    object-fit: cover;
+  }
 }

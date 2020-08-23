@@ -21,7 +21,7 @@ export const Header = ({ className, brandClassName, navClassName }) => {
 
           <Button variant="outline-light" href={resume} target="_blank" className={classes.resumeButton}>
             Résumé
-            <span className="material-icons"> get_app </span>
+            <span className="material-icons" aria-hidden={true}>get_app</span>
           </Button>
         </nav>
       </Container>

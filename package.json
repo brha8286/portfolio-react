@@ -11,8 +11,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-dom": "^16.13.1",
-    "react-image-gallery": "^1.0.7",
-    "react-pdf": "^4.2.0",
+    "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.0.0"
   },
