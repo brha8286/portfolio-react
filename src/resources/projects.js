@@ -28,6 +28,7 @@ export const PROJECTS = [
       "was done through NI DAQ modules and a custom LabVIEW GUI.  All told, I was able to maintain Mach=1.25 within about +-2% for a 5 second test."
     ],
     images: [pressureSystem, coupling, nozzle],
+    skills: ["Nozzle Design", "Aerodynamics", "SLA 3D Printing", "Solidworks CAD", "LabVIEW", "NI Module Data Acquisition", "MATLAB", "Manual Lathe Operation"],
   },
   {
     id: "amarcs",
@@ -39,16 +40,18 @@ export const PROJECTS = [
       "and various subsystem tests.  As Systems Engineering Lead, I owned a redesign of the fuel/oxidizer feed system to accommodate " +
       "higher flow rates while maintaining combatibility with existing software and electrical components for control.",
     images: [assembled, hotfire, components],
+    skills: ["Project Management", "High Pressure and Temperature Safety", "Test Documentation", "Fluid Feed System Design", "Cryogenic Liquid Fuel"],
   },
   {
     id: "compass",
     title: "COMPASS",
-    short: "4 degree of freedom wind tunnel model sositioning system (senior project)",
-    long: "I worked as the Mechanical Engineering Lead on a team developing a model positioning system for a newly installed wind tunnel " +
+    short: "4 degree of freedom wind tunnel model positioning system (senior project)",
+    long: "I worked as the Mechanical Engineering Lead on a team of 8 to develop a model positioning system for a newly installed wind tunnel " +
       "at CU Boulder.  I designed and manufactured all mechanisms and structural components to dynamically control yaw, pitch, and plunge; and statically set roll. " +
       "A DC motor controlled yaw via a worm gear, and a pair of linear actuators with a linkage controlled pitch/plunge. Roll was achieved with " +
       "pins which indexed the model mount to a plate with regularly spaced holes.",
     images: [system, yaw, pitch, roll],
+    skills: ["Solidworks CAD", "Manual Lathe Operation", "Manual and CNC Mill Operation", "Gearing Design and Installation", "Mechanism Design"],
   },
   {
     id: "buckling",
@@ -58,6 +61,7 @@ export const PROJECTS = [
       "I designed the mechanical structure and sourced an appropriate bar load cell to interface with existing data acquisition hardware and software.  " +
       "I manufactured, assembled, and validated the first prototype, then built a procedure for other machinists to manufacture and assemble an additional 12 units.  " +
       "The test stands are still used in undergraduate labs today.",
-    images: [buckling, buckling_annotated]
+    images: [buckling, buckling_annotated],
+    skills: ["Solidworks CAD", "Small Batch Production", "DFM/DFA", "Manual Lathe Operation", "Manual and CNC Mill Operation", "Stress analysis"],
   }
 ];
