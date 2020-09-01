@@ -25,10 +25,11 @@ $heroOverlayHeight: 326px;
 
   h1 {
     font-size: 3.5rem;
+    margin: 20px auto;
   }
 
   .brandonIntro {
-    width: 600px;
+    width: 800px;
     max-width: 100%;
   }
 
@@ -79,11 +80,17 @@ $heroOverlayHeight: 326px;
   h2 {
     font-size: 2.5rem;
     text-align: center;
+    margin: 0 auto 20px;
   }
 }
 
 .section {
   padding: $section-margin 0;
+}
+
+p {
+  max-width: 700px;
+  margin: 0 auto; // centering
 }
 
 .projectImg {

@@ -16,7 +16,7 @@ export function ProjectCarousel({project, className, showThumbs = true, autoPlay
       <Carousel
         showThumbs={showThumbs}
         autoPlay={autoPlay}
-        stopOnHover={false}
+        stopOnHover={true}
         infiniteLoop={true}
         showArrows={true}
         showIndicators={false}

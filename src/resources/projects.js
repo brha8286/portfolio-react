@@ -22,7 +22,7 @@ export const PROJECTS = [
     long: [
       "For an independent study research project, I designed and implemented a mass flow controller for a small supersonic wind tunnel " +
       "previously made for use in student labs in the CU Aerospace department.  With minimal budget, I accomplished this using existing " +
-      "data acquisition equipment and manual pressure regulator, sourced a small DC brushed motor, and designed and manufactured custom 3d printed and aluminum parts.",
+      "data acquisition equipment and manual pressure regulator, sourced a small DC brushed motor, and designed and manufactured custom SLA plastic and machined aluminum parts.",
       "This process included designing new supersonic converging-diverging nozzle blocks with internal pressure tap channels and a regulator-motor " +
       "coupling which allowed electronic control of the manual regualator. These parts were printed on a Formlabs SLA printer.  Data acquisition " +
       "was done through NI DAQ modules and a custom LabVIEW GUI.  All told, I was able to maintain Mach=1.25 within about +-2% for a 5 second test."
@@ -30,6 +30,24 @@ export const PROJECTS = [
     images: [pressureSystem, coupling, nozzle],
     skills: ["Nozzle Design", "Aerodynamics", "SLA 3D Printing", "Solidworks CAD", "LabVIEW", "NI Module Data Acquisition", "MATLAB", "Manual Lathe Operation"],
   },
+  
+  {
+    id: "lumistrip",
+    title: "Lumistrip",
+    short: "Personal project to create modular touch activated lighting fixtures",
+    long: [
+      "Everyone needs a quarantine LED project.",
+      "I’ve had an idea of creating modular backlit aluminum touch controlled lighting for years.  It’s hopefully more exciting than it sounds.  ",
+      `I set out with the goal of inexpensive units which could be strung together in any quantity.  
+      To this end, I designed Lumistrip without any smart or costly components, a single power supply,
+       and the ability to connect any number together inline.  Each 16” strip features 14” of RGB LEDs, 
+      12V/GND/R/G/B rails, the capacitive touch sensor circuit switching 12V to the individual strip, and 3d printed fixtures for all parts.
+      `
+    ],
+    images: [],
+    skills: ["Product Design", "DC Electronics", "PCB Design", "3d Printing", "Iterative Design"],
+  },
+  
   {
     id: "amarcs",
     title: "AMARCS",
