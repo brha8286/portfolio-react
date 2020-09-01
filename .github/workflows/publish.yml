@@ -2,7 +2,7 @@ name: Build and publish
 
 on:
   push:
-    branches: [ master ]]
+    branches: [ master ]
 
 jobs:
   build:
@@ -16,8 +16,8 @@ jobs:
       with:
         node-version: 14.x
     - name: Authorizing Github action
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-        uses: oleksiyrudenko/gha-git-credentials@v1
+      with:
+        token: "${{ secrets.GITHUB_TOKEN }}"
+      uses: oleksiyrudenko/gha-git-credentials@v1
     - run: yarn
     - run: yarn deploy
