@@ -35,7 +35,7 @@ export function ProjectCarousel({project, className, showThumbs = true, autoPlay
         {
           images.map(image => (
             <div className={classes.image}>
-              <img src={image} style={{ width: '100%', height: 'auto' }} />
+              <img src={image} alt={''} style={{ width: '100%', height: 'auto' }} />
             </div>
           ))
         }
