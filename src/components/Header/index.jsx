@@ -13,7 +13,7 @@ export const Header = ({ className, brandClassName, navClassName }) => {
   return (
     <header className={clsx(classes.header, className)}>
       <Container className={classes.container}>
-        <Link className={clsx(classes.brandonBrand, brandClassName)} to={"/#home"}>
+        <Link className={clsx(classes.brandonBrand, brandClassName)} to="/" onClick={()=>window.scrollTo(0,0)}>
           Brandon Harris
         </Link>
         <nav className={clsx(classes.pageNavigation, navClassName)}>

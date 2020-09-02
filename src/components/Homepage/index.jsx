@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { PROJECTS } from 'resources/projects';
 import bannerImage from "resources/banner.jpg";
+import aboutImage from "resources/about.png";
 
 import classes from './homepage.module.scss';
 import { useScrollWatch } from "../../hooks/useScrollWatch";
@@ -32,7 +33,7 @@ export function Homepage() {
       <div className={classes.heroOverlay}>
         <section ref={introSectionRef}>
           <Container className={classes.brandonIntro}>
-            <h1 id="home">Brandon Harris</h1>
+            <h1>Brandon Harris</h1>
             {/* <p>
               Raised by wolves in the Siberian tundra, Brandon was taught aerospace engineering by an equally
               out-of-place cocker spaniel. Little did he know that the housepet was none other than the grandchild-dog
@@ -65,6 +66,8 @@ export function Homepage() {
             I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
           </p>
         </Container >
+
+        <img className={classes.aboutImage} src={aboutImage} />
 
         <Container className={classes.section}>
           <h2 id="projects">Projects</h2>
