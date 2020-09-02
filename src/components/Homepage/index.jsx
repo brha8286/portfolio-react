@@ -40,13 +40,8 @@ export function Homepage() {
               a friendship stronger than permafrost and hotter than KFC mashed potatoes was born; and our dashing hero
               would learn fluid dynamics along the way.
             </p> */}
-            <p>
-              I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but I enjoy a broad scope of 
-              product development.  I'm drawn toward attractive,functional design projects that require a wide array of 
-              cross-disciplinary systems, which I excel at combining into a cohesive whole.
-            </p>
-            <p>
-              I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
+            <p style={{ fontSize: "1.4rem" }}>
+              Designer, Thinker, Problem Solver, Engineer...er
             </p>
           </Container>
         </section>
@@ -59,6 +54,18 @@ export function Homepage() {
       </div>
 
       <main className={classes.main}>
+        <Container className={classes.section}>
+          <h2 id="about">About Me</h2>
+          <p>
+            I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but I enjoy a broad scope of
+            product development.  I'm drawn toward attractive, functional design projects that require a wide array of
+            cross-disciplinary systems, which I excel at combining into a cohesive whole.
+          </p>
+          <p>
+            I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
+          </p>
+        </Container >
+
         <Container className={classes.section}>
           <h2 id="projects">Projects</h2>
           <p>Outside of my work at Opener, I have always sought out challenging and engaging projects in my academic and personal life.

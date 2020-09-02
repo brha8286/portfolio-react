@@ -15,10 +15,12 @@ export const Header = ({ className, brandClassName, navClassName }) => {
       <Container className={classes.container}>
         <Link className={clsx(classes.brandonBrand, brandClassName)} to={"/"}>Brandon Harris</Link>
         <nav className={clsx(classes.pageNavigation, navClassName)}>
+          <LinkButton variant="outline-light" to="/#about">
+            About
+          </LinkButton>
           <LinkButton variant="outline-light" to="/#projects">
             Projects
           </LinkButton>
-
           <Button variant="outline-light" href={resume} target="_blank" className={classes.resumeButton}>
             Résumé
             <span className="material-icons" aria-hidden={true}>get_app</span>

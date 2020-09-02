@@ -1,7 +1,7 @@
 @import "styles/settings";
 
 $heroOverlayTop: 200px;
-$heroOverlayHeight: 326px;
+$heroOverlayHeight: 260px;
 
 .heroImage {
   background-color: $body-color;
@@ -67,7 +67,7 @@ $heroOverlayHeight: 326px;
       margin: auto; // horizontally center
       flex-grow: unset;
       // HACKY: using the EXACT width so the animation is smooth
-      width: 204px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
       transition: width .3s ease-in-out;
     }
   }
@@ -89,7 +89,7 @@ $heroOverlayHeight: 326px;
 }
 
 p {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto; // centering
 }
 

@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import { Homepage } from 'components/Homepage';
 import {Footer} from "./components/Footer";
-import {Bio} from "./components/Bio";
 import {Project} from "./components/Project";
 
 // The 'style' properties added in this file are to keep the footer at the bottom of the page, even when the page
@@ -16,9 +15,6 @@ export const App = () => {
           <Switch>
             <Route path="/" exact={true}>
               <Homepage />
-            </Route>
-            <Route path="/bio" exact={true}>
-              <Bio />
             </Route>
             <Route path="/project/:id" exact={true}>
               <Project />
