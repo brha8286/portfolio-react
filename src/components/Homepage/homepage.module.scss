@@ -33,7 +33,6 @@ $heroOverlayHeight: 260px;
     max-width: 100%;
   }
 
-
   .header {
     &:not(.fixed) {
       background-color: transparent; // remove the background color while not fixed
@@ -49,18 +48,32 @@ $heroOverlayHeight: 260px;
       top: 0;
 
       .headerBrand {
-        transition-delay: .2s; // take longer to show up
+        transition-delay: 0.2s; // take longer to show up
       }
-
-      .headerNav {
-        width: 100%; // Max width means the inner contents have room to be right aligned
+      @media screen and (min-width: 600px) {
+        .headerNav {
+          width: 100%; // Max width means the inner contents have room to be right aligned (only when large screen)
+          z-index: auto;
+        }
+      }
+    }
+    // TODO leave header, make nav buttons hamburger menu
+    @media screen and (max-width: 600px) {
+      .headerBrand {
+        opacity: 0; // Keep brand hidden
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        z-index: auto;
       }
     }
 
-    .headerBrand {
-      opacity: 1; // Show the brand
-      position: absolute;
-      transition: opacity .3s ease-in-out;
+    @media screen and (min-width: 600px) {
+      .headerBrand {
+        opacity: 1; // Show the brand
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 1;
+      }
     }
 
     .headerNav {
@@ -68,10 +81,9 @@ $heroOverlayHeight: 260px;
       flex-grow: unset;
       // HACKY: using the EXACT width so the animation is smooth
       width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
-      transition: width .3s ease-in-out;
+      transition: width 0.3s ease-in-out;
     }
   }
-;
 }
 
 .main {
@@ -80,7 +92,8 @@ $heroOverlayHeight: 260px;
   h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin: 0 auto 20px;
+    margin: 0px auto 20px;
+    padding: 20px 0 0 0;
   }
 }
 

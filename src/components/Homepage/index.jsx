@@ -32,7 +32,7 @@ export function Homepage() {
       <div className={classes.heroOverlay}>
         <section ref={introSectionRef}>
           <Container className={classes.brandonIntro}>
-            <h1>Brandon Harris</h1>
+            <h1 id="home">Brandon Harris</h1>
             {/* <p>
               Raised by wolves in the Siberian tundra, Brandon was taught aerospace engineering by an equally
               out-of-place cocker spaniel. Little did he know that the housepet was none other than the grandchild-dog
@@ -68,8 +68,8 @@ export function Homepage() {
 
         <Container className={classes.section}>
           <h2 id="projects">Projects</h2>
-          <p>Outside of my work at Opener, I have always sought out challenging and engaging projects in my academic and personal life.
-          I enjoy seeing a project through from concept to execution, particularly when I'm involved in all steps between.  Take a look
+          <p>Outside of my work at Opener, I've always sought challenging and engaging projects in my academic and personal life.
+          I enjoy seeing a project through from concept to execution, particularly when I'm involved in all steps in between.  Take a look
             at some of the things I've made.</p>
         </Container >
 

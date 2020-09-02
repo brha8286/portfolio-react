@@ -13,7 +13,9 @@ export const Header = ({ className, brandClassName, navClassName }) => {
   return (
     <header className={clsx(classes.header, className)}>
       <Container className={classes.container}>
-        <Link className={clsx(classes.brandonBrand, brandClassName)} to={"/"}>Brandon Harris</Link>
+        <Link className={clsx(classes.brandonBrand, brandClassName)} to={"/#home"}>
+          Brandon Harris
+        </Link>
         <nav className={clsx(classes.pageNavigation, navClassName)}>
           <LinkButton variant="outline-light" to="/#about">
             About
