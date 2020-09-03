@@ -10,7 +10,7 @@ import {Project} from "./components/Project";
 export const App = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <div style={{ flex: '1 0 auto' }}>
+      <div style={{ flex: '1 0 auto', overflow: 'hidden' }}>
         <Router basename="/portfolio-react">
           <Switch>
             <Route path="/" exact={true}>

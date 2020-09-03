@@ -15,15 +15,30 @@ $heroOverlayHeight: 260px;
   color: $dark;
 }
 
+div.outer {
+  width: 100%; /* some width amount needed */
+  margin: 0 auto; 
+  overflow: hidden;
+}
+div.inner {
+  position:relative;
+  float: right;
+  right: 50%;
+  margin: 40px 0 60px;
+}
+div.inner img {
+  position: relative; 
+  right:-50%;
+}
+
 .aboutImage {
-  height: 200px;
+  height: 300px;
   
   @include screen-lg {
     height: auto;
     width: 100%;
     
   }
-
 }
 
 // @media screen and (min-width: 1000) {
@@ -37,7 +52,7 @@ $heroOverlayHeight: 260px;
   @extend %overlay;
 
   top: $heroOverlayTop;
-  height: $heroOverlayHeight;
+  // height: $heroOverlayHeight;
   padding: 8px 0 0 0;
   text-align: center;
 
@@ -81,7 +96,7 @@ $heroOverlayHeight: 260px;
         opacity: 0; // Keep brand hidden
         position: absolute;
         transition: opacity 0.3s ease-in-out;
-        z-index: auto;
+        display: none;
       }
     }
 
@@ -117,6 +132,21 @@ $heroOverlayHeight: 260px;
 
 .section {
   padding: $section-margin 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0px auto 20px;
+  padding: 20px 0 0 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+.projectDescription {
+  text-align: center;
 }
 
 p {

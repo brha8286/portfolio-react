@@ -55,7 +55,7 @@ export function Homepage() {
       </div>
 
       <main className={classes.main}>
-        <Container className={classes.section}>
+        <Container className={classes.section, classes.outer}>
           <h2 id="about">About Me</h2>
           <p>
             I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but I enjoy a broad scope of
@@ -65,9 +65,13 @@ export function Homepage() {
           <p>
             I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
           </p>
+
+          <div class={classes.inner}>
+            <img className={classes.aboutImage} src={aboutImage} />
+          </div>
         </Container >
 
-        <img className={classes.aboutImage} src={aboutImage} />
+          
 
         <Container className={classes.section}>
           <h2 id="projects">Projects</h2>
@@ -81,7 +85,7 @@ export function Homepage() {
             <Container className={classes.section}>
               <ProjectCarousel project={project} showThumb={false} autoPlay={true} />
               <h3>{project.title}</h3>
-              <p>{project.short}</p>
+              <p className={classes.projectDescription}>{project.short}</p>
 
               <LinkButton to={`/project/${project.id}`} variant="primary" className={classes.seeMoreBtn}>
                 Read More
