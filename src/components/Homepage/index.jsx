@@ -14,7 +14,8 @@ import { LinkButton } from "../LinkButton";
 import { useQuery } from "../../hooks/useQuery";
 import { ProjectCarousel } from "../ProjectCarousel";
 
-const COLORS = ['rgba(100, 175, 233, .3)', 'rgba(200, 200, 62, .3)', 'rgba(200, 200, 190, .3)', 'rgba(180, 70, 60, .3)']
+const COLORS = ['#3f7cac', '#1b2845']
+const COLORFONT = ['RGB(75,75,75)', ('RGB(200,200,200)')]
 
 export function Homepage() {
   const introSectionRef = React.useRef(null); // A reference to the element around the buttons so we can watch if we have scrolled past it
@@ -31,7 +32,7 @@ export function Homepage() {
       <ProjectDialog project={project} />
 
       <div className={classes.heroOverlay}>
-        <section ref={introSectionRef}>
+        <div ref={introSectionRef}>
           <Container className={classes.brandonIntro}>
             <h1>Brandon Harris</h1>
             {/* <p>
@@ -45,7 +46,7 @@ export function Homepage() {
               Designer, Thinker, Problem Solver, Engineer...er
             </p>
           </Container>
-        </section>
+        </div>
 
         <Header
           className={clsx(classes.header, hasScrolledPastIntro && classes.fixed)}
@@ -55,33 +56,36 @@ export function Homepage() {
       </div>
 
       <main className={classes.main}>
-        <Container className={classes.section, classes.outer}>
-          <h2 id="about">About Me</h2>
-          <p>
-            I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but I enjoy a broad scope of
-            product development.  I'm drawn toward attractive, functional design projects that require a wide array of
-            cross-disciplinary systems, which I excel at combining into a cohesive whole.
+        <section>
+          <Container className={classes.section, classes.outer}>
+            <h2 id="about">About Me</h2>
+            <p>
+              I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but enjoy a broad scope of
+              product development.  I'm drawn toward attractive, functional design projects that require an array of
+              cross-disciplinary systems, which I excel at combining into a cohesive whole.  I am currently developing the vehicle operator 
+              training program, and have worked extensively in flight testing at Opener, working toward personal electric eVTOL aviation.
           </p>
-          <p>
-            I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
+            <p>
+              I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
           </p>
 
-          <div class={classes.inner}>
-            <img className={classes.aboutImage} src={aboutImage} />
-          </div>
-        </Container >
+            <div class={classes.inner}>
+              <img className={classes.aboutImage} src={aboutImage} />
+            </div>
+          </Container >
+        </section>
 
-          
-
-        <Container className={classes.section}>
-          <h2 id="projects">Projects</h2>
-          <p>Outside of my work at Opener, I've always sought challenging and engaging projects in my academic and personal life.
-          I enjoy seeing a project through from concept to execution, particularly when I'm involved in all steps in between.  Take a look
+        <section>
+          <Container className={classes.section}>
+            <h2 id="projects">Projects</h2>
+            <p>Outside of my work at Opener, I've always sought challenging and engaging projects in my academic and personal life.
+            I enjoy seeing a project through from concept to execution, particularly when I'm involved in all steps in between.  Take a look
             at some of the things I've made.</p>
-        </Container >
+          </Container >
+        </section>
 
         {PROJECTS.map((project, index) => (
-          <section key={project.id} style={{ backgroundColor: COLORS[index % COLORS.length] }}>
+          <section key={project.id}>
             <Container className={classes.section}>
               <ProjectCarousel project={project} showThumb={false} autoPlay={true} />
               <h3>{project.title}</h3>
