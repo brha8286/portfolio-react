@@ -55,6 +55,7 @@ export const PROJECTS = [
     skills: ["Nozzle Design", "Aerodynamics", "SLA 3D Printing", "Solidworks CAD", "LabVIEW", "NI Module Data Acquisition", "MATLAB", "Manual Lathe Operation"],
   },
   
+
   {
     id: "amarcs",
     title: "AMARCS",
