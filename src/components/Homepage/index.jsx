@@ -57,7 +57,7 @@ export function Homepage() {
 
       <main className={classes.main}>
         <section>
-          <Container className={classes.section, classes.outer}>
+          <Container className={clsx(classes.section, classes.outer)}>
             <h2 id="about">About Me</h2>
             <p>
               I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but enjoy a broad scope of
