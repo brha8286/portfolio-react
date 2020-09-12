@@ -14,7 +14,31 @@ import pressureSystem from "./supersonic/system.png"
 import coupling from "./supersonic/coupling.PNG"
 import nozzle from "./supersonic/nozzle.png"
 
+import bottom_0 from "./lumibar/bottom_0.png"
+import bottom_1 from "./lumibar/bottom_1.png"
+import riser_assembled from "./lumibar/riser_assembled.png"
+import riser_parts from "./lumibar/riser_parts.png"
+import snap_fit from "./lumibar/snap_fit.png"
+import top_glow from "./lumibar/top_glow.png"
+
 export const PROJECTS = [
+  {
+    id: "lumibar",
+    title: "Lumibar",
+    short: "Personal project to create modular touch activated lighting fixtures",
+    long: [
+      "Everyone needs a quarantine LED project.",
+      "I’ve had an idea of creating modular backlit aluminum touch controlled lighting for years.  It’s hopefully more exciting than it sounds.  ",
+      `I set out with the goal of inexpensive units which could be strung together in any quantity.  
+      To this end, I designed Lumistrip without any smart or costly components, a single power supply,
+       and the ability to connect any number together inline.  Each 16” strip features 14” of RGB LEDs, 
+      12V/GND/R/G/B rails, the capacitive touch sensor circuit switching 12V to the individual strip, and 3d printed fixtures for all parts.
+      `
+    ],
+    images: [top_glow, bottom_0, riser_parts, riser_assembled, bottom_1, snap_fit],
+    skills: ["Product Design", "DC Electronics", "PCB Design", "3d Printing", "Iterative Design", "DFA/DFM"],
+  },
+  
   {
     id: "supersonic",
     title: "Supersonic Mass Flow Controller",
@@ -29,23 +53,6 @@ export const PROJECTS = [
     ],
     images: [pressureSystem, coupling, nozzle],
     skills: ["Nozzle Design", "Aerodynamics", "SLA 3D Printing", "Solidworks CAD", "LabVIEW", "NI Module Data Acquisition", "MATLAB", "Manual Lathe Operation"],
-  },
-  
-  {
-    id: "lumistrip",
-    title: "Lumistrip",
-    short: "Personal project to create modular touch activated lighting fixtures",
-    long: [
-      "Everyone needs a quarantine LED project.",
-      "I’ve had an idea of creating modular backlit aluminum touch controlled lighting for years.  It’s hopefully more exciting than it sounds.  ",
-      `I set out with the goal of inexpensive units which could be strung together in any quantity.  
-      To this end, I designed Lumistrip without any smart or costly components, a single power supply,
-       and the ability to connect any number together inline.  Each 16” strip features 14” of RGB LEDs, 
-      12V/GND/R/G/B rails, the capacitive touch sensor circuit switching 12V to the individual strip, and 3d printed fixtures for all parts.
-      `
-    ],
-    images: [],
-    skills: ["Product Design", "DC Electronics", "PCB Design", "3d Printing", "Iterative Design"],
   },
   
   {
