@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/functions";
+
+$max-width: 1280px;
+$section-margin: 40px;
+
+$brandon-red: rgb(175, 0, 0);
+$brandon-gray: rgb(150, 150, 150);
+
+// Bootstrap overrides
+$primary:       #73211e;
+$secondary:     #cccccc;
+$light:         #eaeaea;
+$red:           $brandon-red;
+
+$body-bg: rgba(black, .02);
+
+@import "~bootstrap/scss/variables"; // Import last so the above takes priority

@@ -1,0 +1,175 @@
+@import "styles/settings";
+
+$heroOverlayTop: 200px;
+$heroOverlayHeight: 260px;
+
+.heroImage {
+  background-color: $body-color;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8px 0 6px;
+  min-height: $heroOverlayHeight + $heroOverlayTop + $heroOverlayHeight/2;
+  height: 100vh;
+  max-height: 900px;
+  color: $dark;
+}
+
+div.outer {
+  width: 100%; /* some width amount needed */
+  margin: 0 auto; 
+  overflow: hidden;
+}
+div.inner {
+  position:relative;
+  float: right;
+  right: 50%;
+  margin: 40px 0 60px;
+}
+div.inner img {
+  position: relative; 
+  right:-50%;
+}
+
+.aboutImage {
+  height: 300px;
+  
+  @include screen-lg {
+    height: auto;
+    width: 100%;
+    
+  }
+}
+
+// @media screen and (min-width: 1000) {
+//   .aboutImage {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+
+.heroOverlay {
+  @extend %overlay;
+
+  top: $heroOverlayTop;
+  // height: $heroOverlayHeight;
+  padding: 8px 0 0 0;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+    margin: 20px auto;
+  }
+
+  .brandonIntro {
+    width: 800px;
+    max-width: 100%;
+  }
+
+  .header {
+    &:not(.fixed) {
+      background-color: transparent; // remove the background color while not fixed
+      position: relative;
+
+      .headerBrand {
+        opacity: 0; // Hide the brand
+      }
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+
+      .headerBrand {
+        transition-delay: 0.2s; // take longer to show up
+      }
+      @media screen and (min-width: 600px) {
+        .headerNav {
+          width: 100%; // Max width means the inner contents have room to be right aligned (only when large screen)
+          z-index: auto;
+        }
+      }
+    }
+    // TODO leave header, make nav buttons hamburger menu
+    @media screen and (max-width: 600px) {
+      .headerBrand {
+        opacity: 0; // Keep brand hidden
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .headerBrand {
+        opacity: 1; // Show the brand
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 1;
+      }
+    }
+
+    .headerNav {
+      margin: auto; // horizontally center
+      flex-grow: unset;
+      // HACKY: using the EXACT width so the animation is smooth
+      width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      transition: width 0.3s ease-in-out;
+    }
+  }
+}
+
+.main {
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0px auto 20px;
+    padding: 20px 0 0 0;
+  }
+}
+
+.section {
+  padding: $section-margin 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0px auto 20px;
+  padding: 20px 0 0 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+.projectDescription {
+  text-align: center;
+}
+
+p {
+  max-width: 900px;
+  margin: 0 auto; // centering
+}
+
+.projectImg {
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 3rem;
+}
+
+.seeMoreBtn {
+  margin-top: 1.5rem;
+}
+
+section:nth-child(odd) {
+  background-color: #f1f1f1;
+  color: rgb(75,75,75);
+}
+
+section:nth-child(even) {
+  background-color: #e6e6e6;
+  color: rgb(75,75,75);
+}

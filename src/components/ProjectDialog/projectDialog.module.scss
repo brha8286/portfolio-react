@@ -1,0 +1,13 @@
+@import "styles/settings";
+
+.closeButton {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: $gray-300;
+}
+
+.carouselContainer {
+  min-height: 50vh;
+  height: 65vh;
+}
