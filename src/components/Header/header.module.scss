@@ -24,7 +24,7 @@
     }
 
     &:hover {
-      text-shadow: 2px 2px $brandon-red;
+      text-shadow: 2px 2px $brandon-gray;
     }
   }
 
@@ -39,7 +39,19 @@
     }
   }
 
+  // @media screen and (max-width: 350px) {
+  // .resumeButton {
+  // font-size: 0.8rem;
+  // }
+  // }
+
+  @media screen and (max-width: 350px) {
+    .pageNavigation * {
+      font-size: 0.8rem;
+    }
+  }
+
   .resumeButton * {
     vertical-align: middle;
   }
-};
+}
