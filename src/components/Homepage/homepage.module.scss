@@ -9,35 +9,35 @@ $heroOverlayHeight: 260px;
   background-size: cover;
   background-attachment: fixed;
   padding: 8px 0 6px;
-  min-height: $heroOverlayHeight + $heroOverlayTop + $heroOverlayHeight/2;
+  // min-height: $heroOverlayHeight + $heroOverlayTop + $heroOverlayHeight/2;
+  min-height: $heroOverlayHeight * 2;
   height: 100vh;
-  max-height: 900px;
+  // max-height: 900px;
   color: $dark;
 }
 
 div.outer {
   width: 100%; /* some width amount needed */
-  margin: 0 auto; 
+  margin: 0 auto;
   overflow: hidden;
 }
 div.inner {
-  position:relative;
+  position: relative;
   float: right;
   right: 50%;
   margin: 40px 0 60px;
 }
 div.inner img {
-  position: relative; 
-  right:-50%;
+  position: relative;
+  right: -50%;
 }
 
 .aboutImage {
   height: 300px;
-  
+
   @include screen-lg {
     height: auto;
     width: 100%;
-    
   }
 }
 
@@ -51,8 +51,8 @@ div.inner img {
 .heroOverlay {
   @extend %overlay;
 
-  top: $heroOverlayTop;
-  // height: $heroOverlayHeight;
+  // top: $heroOverlayTop;
+  top: 20%;
   padding: 8px 0 0 0;
   text-align: center;
 
@@ -83,38 +83,55 @@ div.inner img {
       .headerBrand {
         transition-delay: 0.2s; // take longer to show up
       }
+      
+      @media screen and (max-width: 350px) {
+        .headerNav {
+          z-index: auto;
+          margin-left: calc(50%% - 135px);
+        }
+      }
+
       @media screen and (min-width: 600px) {
         .headerNav {
-          width: 100%; // Max width means the inner contents have room to be right aligned (only when large screen)
+          // width: 100%; // Max width means the inner contents have room to be right aligned (only when large screen)
           z-index: auto;
+          margin-left: calc(100% - 310px);
         }
       }
     }
+
+    .headerNav {
+      margin-left: calc(50% - 135px);
+      flex-grow: unset;
+      // HACKY: using the EXACT width so the animation is smooth
+      // width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+      transition: margin-left 0.3s ease-in-out;
+    }
+
+    @media screen and (min-width: 350px) {
+      .headerNav {
+        //margin: auto; // horizontally center
+        margin-left: calc(50% - 150px);
+        flex-grow: unset;
+        // HACKY: using the EXACT width so the animation is smooth
+        // width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
+        transition: margin-left 0.3s ease-in-out;
+      }
+    }
     // TODO leave header, make nav buttons hamburger menu
-    @media screen and (max-width: 600px) {
       .headerBrand {
         opacity: 0; // Keep brand hidden
         position: absolute;
         transition: opacity 0.3s ease-in-out;
         display: none;
       }
-    }
+
 
     @media screen and (min-width: 600px) {
       .headerBrand {
         opacity: 1; // Show the brand
-        position: absolute;
-        transition: opacity 0.3s ease-in-out;
         z-index: 1;
       }
-    }
-
-    .headerNav {
-      margin: auto; // horizontally center
-      flex-grow: unset;
-      // HACKY: using the EXACT width so the animation is smooth
-      width: 306px; // Shrink the width so it is no longer right aligned. Must be an absolute value so we can animate it.
-      transition: width 0.3s ease-in-out;
     }
   }
 }
@@ -166,10 +183,10 @@ p {
 
 section:nth-child(odd) {
   background-color: #f1f1f1;
-  color: rgb(75,75,75);
+  color: rgb(75, 75, 75);
 }
 
 section:nth-child(even) {
   background-color: #e6e6e6;
-  color: rgb(75,75,75);
+  color: rgb(75, 75, 75);
 }
