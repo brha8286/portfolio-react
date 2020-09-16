@@ -83,11 +83,11 @@ div.inner img {
       .headerBrand {
         transition-delay: 0.2s; // take longer to show up
       }
-      
+
       @media screen and (max-width: 350px) {
         .headerNav {
           z-index: auto;
-          margin-left: calc(50%% - 135px);
+          margin-left: calc(50% - 135px);
         }
       }
 
