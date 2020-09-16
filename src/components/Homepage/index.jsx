@@ -14,9 +14,6 @@ import { LinkButton } from "../LinkButton";
 import { useQuery } from "../../hooks/useQuery";
 import { ProjectCarousel } from "../ProjectCarousel";
 
-const COLORS = ['#3f7cac', '#1b2845']
-const COLORFONT = ['RGB(75,75,75)', ('RGB(200,200,200)')]
-
 export function Homepage() {
   const introSectionRef = React.useRef(null); // A reference to the element around the buttons so we can watch if we have scrolled past it
   const [, hasScrolledPastIntro] = useScrollWatch(introSectionRef);
@@ -70,7 +67,7 @@ export function Homepage() {
           </p>
 
             <div class={classes.inner}>
-              <img className={classes.aboutImage} src={aboutImage} />
+              <img className={classes.aboutImage} src={aboutImage} alt={""}/>
             </div>
           </Container >
         </section>
