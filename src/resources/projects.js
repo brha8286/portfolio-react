@@ -32,7 +32,8 @@ export const PROJECTS = [
       `I set out with the goal of inexpensive units which could be strung together in any quantity.  
       To this end, I designed Lumistrip without any smart or costly components, a single power supply,
        and the ability to connect any number together inline.  Each 16” strip features 14” of RGB LEDs, 
-      12V/GND/R/G/B rails, the capacitive touch sensor circuit switching 12V to the individual strip, and 3d printed fixtures for all parts.
+      12V/GND/R/G/B rails, the capacitive touch sensor circuit switching 12V to the individual strip, and 3d printed fixtures for all parts.  
+      All 3d printed parts are friction or snap fit and require no adhesive or fasteners to assemble.
       `
     ],
     images: [top_glow, bottom_0, riser_parts, riser_assembled, bottom_1, snap_fit],

@@ -42,6 +42,9 @@ export function Homepage() {
             <p style={{ fontSize: "1.4rem" }}>
               Designer, Thinker, Problem Solver, Engineer...er
             </p>
+            <p>
+              I am seeking new challenging opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
+          </p>
           </Container>
         </div>
 
@@ -59,15 +62,12 @@ export function Homepage() {
             <p>
               I'm Brandon.  I like to make things.  I'm an aerospace engineer by education and trade, but enjoy a broad scope of
               product development.  I'm drawn toward attractive, functional design projects that require an array of
-              cross-disciplinary systems, which I excel at combining into a cohesive whole.  I am currently developing the vehicle operator 
-              training program, and have worked extensively in flight testing at Opener, working toward personal electric eVTOL aviation.
-          </p>
-            <p>
-              I am open to opportunities in the eVTOL aerospace, electric vehicle, and hardware product design fields.
+              cross-disciplinary systems, which I excel at combining into a cohesive whole.  I am currently developing the vehicle operator
+              training program and designing/prototyping human factors hardware, and have worked extensively in flight testing at Opener, working toward personal electric eVTOL aviation.
           </p>
 
             <div class={classes.inner}>
-              <img className={classes.aboutImage} src={aboutImage} alt={""}/>
+              <img className={classes.aboutImage} src={aboutImage} alt={""} />
             </div>
           </Container >
         </section>

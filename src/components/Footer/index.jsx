@@ -1,7 +1,7 @@
 import React from "react";
 
 import classes from './footer.module.scss';
-import {Container} from "react-bootstrap";
+// import {Container} from "react-bootstrap";
 import clsx from "clsx";
 import { SocialIcon } from "react-social-icons";
 
