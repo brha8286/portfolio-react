@@ -6,7 +6,7 @@ import { LinkButton } from "../LinkButton";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import resume from "../../resources/BrandonHarris.pdf";
+const resume = `${process.env.PUBLIC_URL}/BrandonHarris.pdf`;
 
 
 export const Header = ({ className, brandClassName, navClassName }) => {
