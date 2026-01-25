@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import { Homepage } from 'components/Homepage';
+import { Homepage } from './components/Homepage';
 import {Footer} from "./components/Footer";
 import {Project} from "./components/Project";
 
@@ -12,17 +12,11 @@ export const App = () => {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <div style={{ flex: '1 0 auto', overflow: 'hidden' }}>
         <Router basename="/">
-          <Switch>
-            <Route path="/" exact={true}>
-              <Homepage />
-            </Route>
-            <Route path="/project/:id" exact={true}>
-              <Project />
-            </Route>
-            <Route path="*">
-              This is not the URL you are looking for.
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/project/:id" element={<Project />} />
+            <Route path="*" element={<div>This is not the URL you are looking for.</div>} />
+          </Routes>
         </Router>
       </div>
 

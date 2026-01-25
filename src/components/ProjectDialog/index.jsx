@@ -3,20 +3,21 @@ import {Modal} from 'react-bootstrap'
 
 import {useQuery} from "../../hooks/useQuery";
 import {LinkButton} from "../LinkButton";
-import {useHistory} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 
 import { ProjectCarousel } from '../ProjectCarousel';
 import classes from './projectDialog.module.scss';
 
 export function ProjectDialog({ project }) {
   const query = useQuery(); // Parse the URL query params
-  const history = useHistory(); // Get access to the react router history object
+  const navigate = useNavigate(); // Get access to the react router navigate function
+  const location = useLocation();
 
   const handleClose = () => {
     query.delete("project"); // remove ?project=<id> from the param list
-    const location = { ...history.location, search: query.toString() } // make a clone of the location object with the new query string
+    const newLocation = { ...location, search: query.toString() } // make a clone of the location object with the new query string
 
-    history.push(location); // Add the new URL to the history stack
+    navigate(newLocation); // Navigate to the new URL
   }
 
   const { title, id } = project || {}; // project could be undefined so give empty object as a fallback

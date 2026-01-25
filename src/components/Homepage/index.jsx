@@ -2,9 +2,9 @@ import { Container } from "react-bootstrap";
 import React from 'react';
 import clsx from 'clsx';
 
-import { PROJECTS } from 'resources/projects';
-import bannerImage from "resources/banner.jpg";
-import aboutImage from "resources/about.png";
+import { PROJECTS } from '../../resources/projects';
+import bannerImage from "../../resources/banner.jpg";
+import aboutImage from "../../resources/about.png";
 
 import classes from './homepage.module.scss';
 import { useScrollWatch } from "../../hooks/useScrollWatch";
